@@ -1,0 +1,254 @@
+/* General Styles */
+body {
+  font-family: 'Playfair Display', serif;
+  margin: 0;
+  padding: 0;
+  background-color: #0a0a0a;
+  color: #fff;
+  border: 2px solid #8a2be2;
+  box-sizing: border-box;
+}
+
+h1, h2, h3 {
+  font-family: 'Cinzel', serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Glowing Border Animation */
+.glow-border {
+  position: relative;
+  overflow: hidden;
+}
+
+.glow-border::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, #8a2be2, #00bfff, #8a2be2, #00bfff);
+  animation: glow 4s linear infinite;
+  z-index: -1;
+}
+
+@keyframes glow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Hero Section */
+#hero {
+  height: 100vh;
+  background: url('hero-bg.jpg') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.hero-content h1 {
+  font-size: 6rem;
+  background: linear-gradient(45deg, #8a2be2, #00bfff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin: 20px 0;
+}
+
+.cta-button {
+  padding: 15px 30px;
+  background: linear-gradient(45deg, #8a2be2, #00bfff);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: scale(1.1);
+}
+
+/* Navigation Bar */
+#navbar {
+  position: sticky;
+  top: 0;
+  background: rgba(10, 10, 10, 0.9);
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+#navbar ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#navbar ul li {
+  margin: 0 20px;
+}
+
+#navbar ul li a {
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+#navbar ul li a:hover {
+  color: #8a2be2;
+}
+
+/* About Section */
+#about {
+  padding: 50px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.about-text {
+  max-width: 60%;
+}
+
+.about-map iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  border-radius: 10px;
+}
+
+/* Features Section */
+#features {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.feature-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 10px;
+  width: 200px;
+  margin: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
+}
+
+.card i {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* Gallery Section */
+#gallery {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+/* Testimonials Section */
+#testimonials {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.testimonial-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.testimonial-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Contact Section */
+#contact {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.floating-cta {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(45deg, #8a2be2, #00bfff);
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.floating-cta:hover {
+  transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(10, 10, 10, 0.9);
+}
