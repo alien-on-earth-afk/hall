@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Vishwanandan Marriage Hall</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
@@ -12,33 +13,120 @@
 <body>
   <!-- Hero Section -->
   <section id="hero">
-    <div id="particles-js"></div>
+    <div id="background-slideshow"></div>
     <div class="hero-content">
-      <h1>Vishwanandan Marriage Hall</h1>
-      <p>Where Dreams Meet Elegance</p>
-      <br></br>
-      <a href="#about" class="cta-button">Explore More</a>
+      <p class="welcome-text">Welcome to</p>
+      <p class="hall-name">Vishwanandan Marriage Hall</p>
     </div>
   </section>
 
   <!-- Navigation Bar -->
-  <nav id="navbar">
-    <ul>
-      <li><a href="#hero">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#features">Features</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#contact">Contact Us</a></li>
-    </ul>
+  <nav id="top-bar">
+    <div class="menu-icon" onclick="toggleMenu()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    
+    <div class="phone-number">
+      <a href="tel:+919910338346">+91 9910338346</a>
+    </div>
+  
+    <div id="side-menu" class="side-menu">
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
   </nav>
+  <style>
+    #top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    
+    .menu-icon {
+      position: absolute;
+      left: 20px;
+      cursor: pointer;
+    }
+    
+    .bar {
+      width: 25px;
+      height: 3px;
+      background: #333;
+      margin: 5px 0;
+      transition: 0.4s;
+    }
+    
+    .phone-number {
+      font-size: 18px;
+    }
+    
+    .phone-number a {
+      text-decoration: none;
+      color: #333;
+    }
+    
+    .side-menu {
+      position: fixed;
+      left: -250px;
+      top: 60px;
+      width: 250px;
+      height: 100vh;
+      background: #fff;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+    
+    .side-menu.active {
+      left: 0;
+    }
+    
+    .side-menu ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .side-menu ul li {
+      padding: 15px 20px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .side-menu ul li a {
+      text-decoration: none;
+      color: #333;
+      font-size: 16px;
+    }
+    </style>
+    
+    <script>
+    function toggleMenu() {
+      document.getElementById('side-menu').classList.toggle('active');
+    }
+    </script>
 
   <!-- About Section -->
   <section id="about">
     <div class="about-content">
       <div class="about-text">
-        <h1><li>About Us </li></h1>
-        <h2>Vishwanandan Marriage Hall is a premium venue designed to host the most memorable weddings. Our hall offers state-of-the-art facilities and impeccable service to make your special day truly unforgettable.</h2>
-        <h2>Address: Amila Bazar, Ghosi, Uttar Pradesh 275301</h2>
+        <h1 class="cursive-heading">About Us</h1>
+        <h2 class="subheading">The Vishwanandan Hall</h2>
+        <p class="description">Our premium venue is designed to host the most memorable events. We offer state-of-the-art facilities and impeccable service to make your special day truly unforgettable.</p>
+        <p class="address">Address: Amila Bazar, Ghosi, Uttar Pradesh 275301</p>
       </div>
       <div class="about-map">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.4713835503126!2d83.50573557485657!3d26.181339991139264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399181ee0414c4ed%3A0x94683a0c293f1716!2sVishwnandan%20AC%20Marriage%20Hall!5e0!3m2!1sen!2sin!4v1738411119920!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -111,6 +199,6 @@
     <p>&copy; 2022 Vishwanandan Marriage Hall. All rights reserved.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="scripts.js"></script>
 </body>
 </html>
